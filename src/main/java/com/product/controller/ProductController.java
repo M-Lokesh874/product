@@ -4,6 +4,7 @@ import com.product.entity.Product;
 import com.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,5 +38,10 @@ public class ProductController {
     @PutMapping
     public List<Product> updateProducts(@RequestBody List<Product> products) {
         return productService.updateProducts(products);
+    }
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable("id") Long productId) {
+        return productService.getProductById(productId);
     }
 }
