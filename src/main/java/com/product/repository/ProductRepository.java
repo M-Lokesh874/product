@@ -18,4 +18,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     void deleteProducts(List<Long> productIds);
 
     List<Product> findByIsDeletedFalse();
+
+    Product findByIdAndIsDeletedFalse(Long productId);
 }

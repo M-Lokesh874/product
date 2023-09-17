@@ -34,4 +34,9 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.saveAll(products);
     }
 
+    @Override
+    public Product getProductById(Long productId) {
+        return productRepository.findByIdAndIsDeletedFalse(productId);
+    }
+
 }
