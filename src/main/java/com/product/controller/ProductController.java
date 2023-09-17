@@ -20,6 +20,9 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    /**
+     * This method will get all product details
+     */
     @GetMapping
     public List<Product> getProducts() {
         return productService.getAllProducts();
